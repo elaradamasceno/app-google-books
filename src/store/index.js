@@ -1,3 +1,3 @@
 import { createStore } from 'react-redux';
 
-export default store;
+export default store;   
