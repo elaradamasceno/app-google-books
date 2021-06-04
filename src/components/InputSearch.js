@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
-import { Input } from 'antd';
+// import { useSelector, useDispatch } from 'react-redux';
 
+import { Input } from 'antd';
 import api from '../services/api';
 
 export function InputSearch(){
