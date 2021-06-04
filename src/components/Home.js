@@ -13,8 +13,6 @@ export function Home(){
           <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="google" />
           <span id="books">Books</span>
         </p>
-        
-  
       </header>
 
       <main>

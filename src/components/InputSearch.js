@@ -3,8 +3,10 @@ import { Input } from 'antd';
 
 export function InputSearch(){
   return(
-    <div>
-      <Input placeholder="Basic usage" allowClear />
+    <div className="search">
+      <div className="content-search">
+        <Input size="large" placeholder="Pesquise aqui..." allowClear />
+      </div>
     </div>
   )
 }

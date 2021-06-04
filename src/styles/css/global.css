@@ -27,6 +27,19 @@
   color: #4285f4;
 }
 
+.search {
+  width: 100%;
+}
+.search .content-search {
+  width: 400px;
+  margin: 0 auto;
+}
+
+@media (max-width: 720px) {
+  .search .content-search {
+    width: auto;
+  }
+}
 * {
   margin: 0px;
   padding: 0px;
