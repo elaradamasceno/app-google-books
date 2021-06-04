@@ -1,0 +1,37 @@
+.home{
+  height: 100%;
+
+  .content-header{
+    display: grid;
+    justify-content: center;
+
+    margin: 0 auto;
+    padding: 6rem 0 2rem;
+
+    .anticon-google{
+      font-size: 6rem;
+      margin-bottom: 1rem;
+
+      color: $blue-color;
+    }
+
+    .google-books{
+      margin-bottom: 0;
+      position: relative;
+
+      #books{
+        position: absolute;
+        bottom: -14px;
+        right: -6px;
+        right: -11px;
+
+        font-size: 1.5rem;
+        font-weight: bold;
+
+        color: $blue-color;
+      }
+    }
+  }
+
+  
+}

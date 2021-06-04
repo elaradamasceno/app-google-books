@@ -1,6 +1,9 @@
 @import '~antd/dist/antd.css';
 @import './variables.scss';
 
+@import './home.scss';
+
+
 * {
   margin: 0px;
   padding: 0px;
@@ -14,6 +17,7 @@ body{
 
 .App{
   height: 100vh;
+  padding: 2rem;
 }
 
 @media(max-width: 1080px){
