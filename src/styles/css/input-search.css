@@ -1,0 +1,15 @@
+.search {
+  width: 100%;
+}
+.search .content-search {
+  width: 400px;
+  margin: 0 auto;
+}
+
+@media (max-width: 720px) {
+  .search .content-search {
+    width: auto;
+  }
+}
+
+/*# sourceMappingURL=input-search.css.map */

@@ -1,0 +1,16 @@
+.search{
+  width: 100%;
+
+  .content-search{
+    width: 400px;
+    margin: 0 auto
+  }
+}
+
+@media(max-width: 720px){
+  .search{
+    .content-search{
+      width: auto;
+    }
+  }
+}
