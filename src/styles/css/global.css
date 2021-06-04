@@ -1,0 +1,28 @@
+@import '~antd/dist/antd.css';
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f1f1f1;
+  color: #4F4F4F;
+}
+
+.App {
+  height: 100vh;
+}
+
+@media (max-width: 1080px) {
+  html {
+    font-size: 93.75%;
+  }
+}
+@media (max-width: 720px) {
+  html {
+    font-size: 93.75%;
+  }
+}
+
+/*# sourceMappingURL=global.css.map */

@@ -1,0 +1,29 @@
+@import '~antd/dist/antd.css';
+@import './variables.scss';
+
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: $background-application;
+  color: $text-color;
+}
+
+.App{
+  height: 100vh;
+}
+
+@media(max-width: 1080px){
+  html{
+    font-size: 93.75%;
+  }
+}
+
+@media(max-width: 720px){
+  html{
+    font-size: 93.75%;
+  }
+}
