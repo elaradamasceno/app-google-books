@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
-// import { useSelector, useDispatch } from 'react-redux';
-
+import { useDispatch } from 'react-redux';
 import { Input } from 'antd';
 import api from '../services/api';
 
 export function InputSearch(){
+  const dispatch = useDispatch();
   const [startIndex, setStartIndex] = useState(0);
 
   function handleChange(e){
@@ -18,7 +18,10 @@ export function InputSearch(){
   function getBooks(value){
     api.get(`volumes?q=${value}&startIndex=${startIndex}`)
     .then(res => {
-      console.log('result ', res)
+      dispatch({
+        type: 'ADD_BOOKS',
+        books: res.data.items
+      })
     })
     .catch(err => {
       // chamar página 404

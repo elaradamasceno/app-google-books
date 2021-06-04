@@ -26,6 +26,9 @@
   font-weight: bold;
   color: #4285f4;
 }
+.home .content-home {
+  padding-bottom: 4rem;
+}
 
 .search {
   width: 100%;
@@ -40,6 +43,47 @@
     width: auto;
   }
 }
+.books-list {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.books-list .content-books-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.books-list .content-books-list .card-book {
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+.books-list .content-books-list .card-book .ant-card-cover {
+  height: 280px;
+  display: flex;
+  align-items: center;
+}
+.books-list .content-books-list .card-book .ant-card-cover img {
+  height: 280px;
+}
+.books-list .content-books-list .card-book .ant-card-cover #not-image {
+  font-size: 4rem;
+  color: #4F4F4F;
+}
+.books-list .content-books-list .card-book .ant-card-body {
+  height: 12.5rem;
+  overflow-y: scroll;
+}
+.books-list .content-books-list .card-book .ant-card-body::-webkit-scrollbar {
+  width: 0.375rem;
+}
+.books-list .content-books-list .card-book .ant-card-body::-webkit-scrollbar-track {
+  background: white;
+}
+.books-list .content-books-list .card-book .ant-card-body::-webkit-scrollbar-thumb {
+  background-color: gray;
+  border-radius: 0.375rem;
+}
+
 * {
   margin: 0px;
   padding: 0px;

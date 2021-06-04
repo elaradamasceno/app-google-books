@@ -1,9 +1,10 @@
 import React from 'react';
 import { GoogleOutlined } from '@ant-design/icons';
-
 import { InputSearch } from './InputSearch';
+import { BooksList } from './BooksList';
 
 export function Home(){
+  
   return(
     <div className="home">
       <header className="content-header">
@@ -15,13 +16,10 @@ export function Home(){
         </p>
       </header>
 
-      <main>
+      <main className="content-home">
         <InputSearch />
+        <BooksList />
       </main>
-
-      <footer>
-
-      </footer>
     </div>
   )
 }
