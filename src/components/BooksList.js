@@ -16,14 +16,18 @@ export function BooksList(){
 
   function openInformationModal(book){
     setIsModalVisible(true);
-
     dispatch(BooksActions.currentBook(book));
   }
+
+  function showTotalItems() {
+    return `${books.totalItems} items`;
+  }
+
 
   return(
     <div className="books-list">
       <div className="content-books-list">
-        {books && books.map((book, index) => {
+        {books && books.items.map((book, index) => {
           return(
             <Card
               className="card-book"
@@ -41,18 +45,18 @@ export function BooksList(){
               <Meta
                 title={book.volumeInfo.title}
                 description={(
-                  <div>
+                  <>
                     <p> <strong> Título: </strong> <span>{book.volumeInfo.title}</span> </p>
                     <p> <strong> Descrição: </strong> <span>{book.volumeInfo.description}</span></p>
-                  </div>
+                  </>
                 )}
               />
             </Card>
           )
         })}
       </div>
-      {isModalVisible && <InformationModal />}
-      <Pagination defaultCurrent={1} total={500}></Pagination>
+      { isModalVisible && <InformationModal />}
+      { books && <Pagination showSizeChanger={false} defaultCurrent={1} total={books.totalItems} showTotal={showTotalItems}></Pagination> }
     </div>
   )
 }

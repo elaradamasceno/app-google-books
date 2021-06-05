@@ -59,3 +59,13 @@
     justify-content: center;
   }
 }
+
+@media(max-width: 720px){
+  .books-list{
+    .content-books-list{
+      .card-book{
+        margin-right: 0;
+      }
+    }
+  }
+}

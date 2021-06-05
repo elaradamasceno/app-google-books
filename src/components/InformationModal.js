@@ -35,7 +35,6 @@ export function InformationModal(){
     let categories = currentBook.volumeInfo.categories ? currentBook.volumeInfo.categories : false;
     let publisher = currentBook.volumeInfo.publisher ? currentBook.volumeInfo.publisher : false;
 
-    console.log(currentBook.volumeInfo)
     return(
       <div className="bibliographic-information">
         <h2> Informações Bibliográficas </h2>

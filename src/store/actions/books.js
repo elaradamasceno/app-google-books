@@ -5,13 +5,6 @@ export function showBookList(books){
 	}
 }
 
-export function showPagination(totalItems){
-	return{
-		type: 'SHOW_PAGINATIOM',
-		totalItems
-	}
-}
-
 export function currentBook(book){
 	return{
 		type: 'CURRENT_BOOK',
