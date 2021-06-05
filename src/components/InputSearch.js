@@ -20,10 +20,11 @@ export function InputSearch(){
   function getBooks(value){
     api.get(`volumes?q=${value}&startIndex=${startIndex}`)
     .then(res => {
-      dispatch(BooksActions.displayBookList(res.data.items))
+      console.log()
+      dispatch(BooksActions.showBookList(res.data.items))
     })
     .catch(err => {
-      // chamar página 404
+      // criar/chamar página 404
       console.error('error ', err)
     })
   }

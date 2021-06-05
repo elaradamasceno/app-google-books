@@ -49,6 +49,7 @@ export function BooksList(){
       </div>
 
       <InformationModal isModalVisible={isModalVisible} />
+      {console.log(books)}
       <Pagination defaultCurrent={1} total={500}></Pagination>
     </div>
   )

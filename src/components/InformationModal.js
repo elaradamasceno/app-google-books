@@ -7,7 +7,7 @@ export function InformationModal({isModalVisible}){
   }
 
   function handleClose(){
-
+    
   }
 
   return(
