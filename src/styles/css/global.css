@@ -73,6 +73,9 @@
   height: 12.5rem;
   overflow-y: scroll;
 }
+.books-list .content-books-list .card-book .ant-card-body .ant-card-meta-description p {
+  margin-bottom: 0.5rem;
+}
 .books-list .content-books-list .card-book .ant-card-body::-webkit-scrollbar {
   width: 0.375rem;
 }

@@ -1,12 +1,19 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { useSelector } from 'react-redux';
 
 import { Card, Pagination } from 'antd';
 import { FileImageOutlined, HeartOutlined, EllipsisOutlined} from '@ant-design/icons';
+import { InformationModal } from './InformationModal';
 
 export function BooksList(){
   const { Meta } = Card;
+  const [isModalVisible, setIsModalVisible] = useState(false);
   const books = useSelector(state => state && state.data);
+
+  function openInformationModal(){
+    setIsModalVisible(true);
+    console.log(books)
+  }
 
   return(
     <div className="books-list">
@@ -23,7 +30,7 @@ export function BooksList(){
               }
               actions={[
                 <HeartOutlined key="favorite" />,
-                <EllipsisOutlined key="ellipsis" />,
+                <EllipsisOutlined key="ellipsis" onClick={openInformationModal}/>,
               ]}
               >
               <Meta
@@ -41,6 +48,8 @@ export function BooksList(){
           )
         })}
       </div>
+
+      <InformationModal isModalVisible={isModalVisible} />
       <Pagination defaultCurrent={1} total={500}></Pagination>
     </div>
   )
