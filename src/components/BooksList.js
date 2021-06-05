@@ -31,7 +31,7 @@ export function BooksList(){
                 <HeartOutlined key="favorite" />,
                 <EllipsisOutlined key="ellipsis" onClick={openInformationModal}/>,
               ]}
-              >
+            >
               <Meta
                 title={book.volumeInfo.title}
                 description={(

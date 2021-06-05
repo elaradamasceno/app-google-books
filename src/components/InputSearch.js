@@ -1,7 +1,9 @@
 import React, {useState} from 'react';
 import { useDispatch } from 'react-redux';
 import { Input } from 'antd';
+
 import api from '../services/api';
+import * as BooksActions from '../store/actions/books';
 
 export function InputSearch(){
   const dispatch = useDispatch();
@@ -18,10 +20,7 @@ export function InputSearch(){
   function getBooks(value){
     api.get(`volumes?q=${value}&startIndex=${startIndex}`)
     .then(res => {
-      dispatch({
-        type: 'ADD_BOOKS',
-        books: res.data.items
-      })
+      dispatch(BooksActions.displayBookList(res.data.items))
     })
     .catch(err => {
       // chamar página 404
