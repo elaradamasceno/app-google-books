@@ -1,14 +1,6 @@
 import { createStore } from 'redux';
+import rootReducer from './reducers';
 
-function books(state, action){
-  switch(action.type){
-    case 'ADD_BOOKS':
-      return {...state, data: action.books}
-    default:
-      return state
-  }
-}
-
-const store = createStore(books);
+const store = createStore(rootReducer);
 
 export default store;   

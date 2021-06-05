@@ -8,11 +8,10 @@ import { InformationModal } from './InformationModal';
 export function BooksList(){
   const { Meta } = Card;
   const [isModalVisible, setIsModalVisible] = useState(false);
-  const books = useSelector(state => state && state.data);
+  const books = useSelector(state => state && state.books.data);
 
   function openInformationModal(){
     setIsModalVisible(true);
-    console.log(books)
   }
 
   return(

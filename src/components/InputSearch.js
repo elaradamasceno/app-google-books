@@ -25,7 +25,7 @@ export function InputSearch(){
     })
     .catch(err => {
       // chamar página 404
-      console.log('error ', err)
+      console.error('error ', err)
     })
   }
   
