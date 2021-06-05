@@ -11,3 +11,10 @@ export function showPagination(totalItems){
 		totalItems
 	}
 }
+
+export function currentBook(book){
+	return{
+		type: 'CURRENT_BOOK',
+		book
+	}
+}

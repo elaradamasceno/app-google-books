@@ -1,0 +1,35 @@
+.information-modal{
+  .content-modal{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 1rem;
+
+    .image-modal{
+      height: 150px !important;
+    }
+
+    .description-book{
+      p{
+        margin-bottom: .5rem;
+      }
+    }
+  }
+
+  .bibliographic-information{
+    p{
+      margin-bottom: .5rem;
+    }
+  }
+}
+
+@media(max-width: 720px){
+  .information-modal{
+    .content-modal{
+      grid-template-columns: none;
+
+      .description-book{
+        font-size: 1rem;
+      }
+    }
+  }
+}

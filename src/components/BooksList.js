@@ -1,17 +1,23 @@
 import React, {useState} from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch} from 'react-redux';
 
 import { Card, Pagination } from 'antd';
 import { FileImageOutlined, HeartOutlined, EllipsisOutlined} from '@ant-design/icons';
 import { InformationModal } from './InformationModal';
 
+import * as BooksActions from '../store/actions/books';
+
 export function BooksList(){
   const { Meta } = Card;
   const [isModalVisible, setIsModalVisible] = useState(false);
-  const books = useSelector(state => state && state.books.data);
 
-  function openInformationModal(){
+  const books = useSelector(state => state && state.books.data);
+  const dispatch = useDispatch();
+
+  function openInformationModal(book){
     setIsModalVisible(true);
+
+    dispatch(BooksActions.currentBook(book));
   }
 
   return(
@@ -29,7 +35,7 @@ export function BooksList(){
               }
               actions={[
                 <HeartOutlined key="favorite" />,
-                <EllipsisOutlined key="ellipsis" onClick={openInformationModal}/>,
+                <EllipsisOutlined key="ellipsis" onClick={() => { openInformationModal(book)}}/>,
               ]}
             >
               <Meta
@@ -37,8 +43,6 @@ export function BooksList(){
                 description={(
                   <div>
                     <p> <strong> Título: </strong> <span>{book.volumeInfo.title}</span> </p>
-                    <p> <strong> Autor: </strong> {book.volumeInfo.authors && book.volumeInfo.authors.map(author => <span key={author}>{author},</span>)}</p>
-                    <p> <strong> Categoria: </strong> {book.volumeInfo.categories && book.volumeInfo.categories.map(category => <span key={category}>{category},</span>)} </p>
                     <p> <strong> Descrição: </strong> <span>{book.volumeInfo.description}</span></p>
                   </div>
                 )}
@@ -47,9 +51,7 @@ export function BooksList(){
           )
         })}
       </div>
-
-      <InformationModal isModalVisible={isModalVisible} />
-      {console.log(books)}
+      {isModalVisible && <InformationModal />}
       <Pagination defaultCurrent={1} total={500}></Pagination>
     </div>
   )

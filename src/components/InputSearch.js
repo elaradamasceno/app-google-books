@@ -20,7 +20,6 @@ export function InputSearch(){
   function getBooks(value){
     api.get(`volumes?q=${value}&startIndex=${startIndex}`)
     .then(res => {
-      console.log()
       dispatch(BooksActions.showBookList(res.data.items))
     })
     .catch(err => {
