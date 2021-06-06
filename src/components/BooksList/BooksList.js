@@ -3,9 +3,9 @@ import { useSelector, useDispatch} from 'react-redux';
 
 import { Card, Pagination } from 'antd';
 import { FileImageOutlined, HeartOutlined, EllipsisOutlined} from '@ant-design/icons';
-import { InformationModal } from './InformationModal';
+import { InformationModal } from '../InformationModal/InformationModal';
 
-import * as BooksActions from '../store/actions/books';
+import * as BooksActions from '../../store/actions/books';
 
 export function BooksList(){
   const { Meta } = Card;

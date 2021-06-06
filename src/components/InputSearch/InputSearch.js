@@ -2,8 +2,8 @@ import React, {useState, useEffect} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Input } from 'antd';
 
-import api from '../services/api';
-import * as BooksActions from '../store/actions/books';
+import api from '../../services/api';
+import * as BooksActions from '../../store/actions/books';
 
 export function InputSearch(){
   const dispatch = useDispatch();

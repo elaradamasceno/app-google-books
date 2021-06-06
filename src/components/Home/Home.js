@@ -1,7 +1,7 @@
 import React from 'react';
 import { GoogleOutlined } from '@ant-design/icons';
-import { InputSearch } from './InputSearch';
-import { BooksList } from './BooksList';
+import { InputSearch } from '../InputSearch/InputSearch';
+import { BooksList } from '../BooksList/BooksList';
 
 export function Home(){
   
