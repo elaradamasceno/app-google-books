@@ -39,6 +39,7 @@ export function InputSearch(){
     <div className="search">
       <div className="content-search">
         <Input 
+          data-testid="input-search-component"
           size="large" 
           placeholder="Pesquise aqui..." 
           allowClear 
