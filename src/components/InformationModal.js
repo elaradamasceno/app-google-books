@@ -1,11 +1,10 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 import { Modal, Avatar } from 'antd';
 import { FileImageOutlined } from '@ant-design/icons';
 
-export function InformationModal(){
+export function InformationModal({isModalVisible, setIsModalVisible}){
   const currentBook = useSelector(state => state && state.currentBook.data);
-  const [isModalVisible, setIsModalVisible] = useState(false);
 
 
   function handleMore(){
@@ -45,11 +44,6 @@ export function InformationModal(){
       </div>  
     )
   }
-
-  useEffect(() => {
-    if(currentBook)
-      setIsModalVisible(true);
-  }, [currentBook])
 
   return(
     <Modal 

@@ -23,6 +23,9 @@ export function BooksList(){
     return `${books.totalItems} items`;
   }
 
+  function handlePagination(page){
+    console.log(page)
+  }
 
   return(
     <div className="books-list">
@@ -55,8 +58,8 @@ export function BooksList(){
           )
         })}
       </div>
-      { isModalVisible && <InformationModal />}
-      { books && <Pagination showSizeChanger={false} defaultCurrent={1} total={books.totalItems} showTotal={showTotalItems}></Pagination> }
+      { isModalVisible && <InformationModal isModalVisible={isModalVisible} setIsModalVisible={setIsModalVisible}/>}
+      { books && <Pagination showSizeChanger={false} defaultCurrent={1} total={books.totalItems} showTotal={showTotalItems} onChange={handlePagination}/> }
     </div>
   )
 }
