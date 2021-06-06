@@ -11,3 +11,10 @@ export function currentBook(book){
 		book
 	}
 }
+
+export function currentPage(page){
+	return{
+		type: 'CURRENT_PAGE',
+		page
+	}
+}

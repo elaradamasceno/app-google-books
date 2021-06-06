@@ -11,7 +11,7 @@ export function BooksList(){
   const { Meta } = Card;
   const [isModalVisible, setIsModalVisible] = useState(false);
 
-  const books = useSelector(state => state && state.books.data);
+  const books = useSelector(state => state.books && state.books.data);
   const dispatch = useDispatch();
 
   function openInformationModal(book){
@@ -24,7 +24,7 @@ export function BooksList(){
   }
 
   function handlePagination(page){
-    console.log(page)
+    dispatch(BooksActions.currentPage(page));
   }
 
   return(

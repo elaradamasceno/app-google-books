@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import { useDispatch } from 'react-redux';
+import React, {useState, useEffect} from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Input } from 'antd';
 
 import api from '../services/api';
@@ -7,26 +7,33 @@ import * as BooksActions from '../store/actions/books';
 
 export function InputSearch(){
   const dispatch = useDispatch();
-  const [startIndex, setStartIndex] = useState(0);
+  const currentPage = useSelector(state => state.currentPage && state.currentPage.data);
+
+  const [searchValue, setSearchValue] = useState('');
 
   function handleChange(e){
     let value = e.target.value;
-    setStartIndex(0);
+    setSearchValue(value);
 
     if(value)
-      getBooks(value);
+      getBooks(value, 0);
   }
 
-  function getBooks(value){
+  function getBooks(value, startIndex){
     api.get(`volumes?q=${value}&startIndex=${startIndex}`)
     .then(res => {
       dispatch(BooksActions.showBookList(res.data))
     })
     .catch(err => {
-      // criar/chamar página 404
       console.error('error ', err)
     })
   }
+
+  useEffect(() => {
+    if(currentPage)
+      getBooks(searchValue, currentPage - 1);
+
+  }, [currentPage])
   
   return(
     <div className="search">
