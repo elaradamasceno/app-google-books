@@ -1,4 +1,8 @@
-export default function currentPage(state = [], action){
+const INITIAL_STATE = {
+  data: []
+}
+
+export default function currentPage(state = INITIAL_STATE, action){
   switch(action.type){
     case 'CURRENT_PAGE':
       return {data: action.page}

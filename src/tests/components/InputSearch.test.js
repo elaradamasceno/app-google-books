@@ -5,14 +5,14 @@ import { Provider } from 'react-redux';
 import store  from '../../store/index';
 import api from '../../services/api';
 
-jest.mock('../../services/api');
+// jest.mock('../../services/api');
 describe('InputSearch component', () => {
   it('should api request in change input search', () => {
     const handleChange = jest.fn();
     
     render(<Provider store={store}> <InputSearch/> </Provider>);
 
-    const teste = screen.getByTestId('input-search-component');
+    // const teste = screen.getByTestId('input-search-component');
 
     // fireEvent.change(teste, {target: {value: 'JavaScript'}})
   })
