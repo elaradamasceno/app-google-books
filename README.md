@@ -2,6 +2,8 @@
 
 Este projeto utiliza a API do [Google Books](https://developers.google.com/books/) para realizar buscas de: Livros, Autores, etc.\
 
+Aplicação responsiva garantindo a utilização em um dispositivo móvel sem comprometer a navegação da aplicação.
+
 ## Tecnologias utilizadas
 
 ### React Hooks
