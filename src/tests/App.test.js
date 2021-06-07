@@ -1,5 +1,5 @@
-import {render, screen} from './tests/index';
-import App from './App';
+import {render, screen} from './global';
+import App from '../App';
 
 describe('App component', () => {
   it('render home component', () => {
