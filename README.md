@@ -22,6 +22,9 @@ Pré-processador [Sass](https://sass-lang.com/documentation) auxilando na escrit
 ## Scripts Disponíveis
 No diretório do projeto, você pode executar:
 
+### `npm install`
+Baixar as dependências do projeto.
+
 ### `npm start`
 Executa a aplicação em modo de desenvolvimento.\
 Abra [http://localhost:3000](http://localhost:3000) para visualizar no navegador.
@@ -33,3 +36,4 @@ Você também verá quaisquer erros de lint no console.
 
 Inicia o executor de teste no modo de observação interativo.\
 Veja sobre [execução de testes](https://facebook.github.io/create-react-app/docs/running-tests).
+
