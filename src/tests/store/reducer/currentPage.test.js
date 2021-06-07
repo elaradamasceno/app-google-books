@@ -1,11 +1,10 @@
 import reducer from '../../../store/reducers/currentPage';
 
 describe('CurrentPage reducer', () => {
-  const initialState = { data: [] };
   const page = 3;
 
   it('should return the initial state', () => {
-    expect(reducer(undefined, [])).toEqual(initialState);
+    expect(reducer(undefined, [])).toEqual([]);
   });
 
   it('should handle CURRENT_PAGE', () => {

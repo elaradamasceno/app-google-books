@@ -1,10 +1,6 @@
 import reducer from '../../../store/reducers/books';
 
 describe('Books reducer', () => {
-  const initialState = {
-    data: []
-  }
-
   const books = { 
     items: [
       {
@@ -36,7 +32,7 @@ describe('Books reducer', () => {
   }
 
   it('should return the initial state', () => {
-    expect(reducer(undefined, {})).toEqual(initialState);
+    expect(reducer(undefined, {})).toEqual([]);
   });
 
   it('should handle SHOW_BOOK_LIST', () => {

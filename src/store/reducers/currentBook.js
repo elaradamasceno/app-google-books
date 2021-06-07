@@ -1,8 +1,4 @@
-const INITIAL_STATE = {
-  data: []
-}
-
-export default function currentBook(state = INITIAL_STATE, action){
+export default function currentBook(state = [], action){
   switch(action.type){
     case 'CURRENT_BOOK':
       return {data: action.book}

@@ -1,10 +1,6 @@
 import reducer from '../../../store/reducers/currentBook';
 
 describe('CurrentBook reducer', () => {
-  const initialState = {
-    data: []
-  }
-
   const book = { 
     id: 1,
     volumeInfo: {
@@ -19,7 +15,7 @@ describe('CurrentBook reducer', () => {
   }
 
   it('should return the initial state', () => {
-    expect(reducer(undefined, {})).toEqual(initialState);
+    expect(reducer(undefined, {})).toEqual([]);
   });
 
   it('should handle CURRENT_BOOK', () => {
