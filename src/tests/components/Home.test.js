@@ -1,5 +1,5 @@
-import { Home } from './Home';
-import {render, screen} from '../../tests/index';
+import { Home } from '../../components/Home/Home';
+import {render, screen} from '../global';
 import { Provider } from 'react-redux';
 import store  from '../../store/index';
 

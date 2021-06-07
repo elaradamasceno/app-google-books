@@ -5,7 +5,7 @@ import { Card, Pagination, message  } from 'antd';
 import { FileImageOutlined, HeartOutlined, EllipsisOutlined} from '@ant-design/icons';
 import { InformationModal } from '../InformationModal/InformationModal';
 
-import * as BooksActions from '../../store/actions/books';
+import * as BooksActions from '../../store/actions/actions';
 
 let savedBooks = [];
 

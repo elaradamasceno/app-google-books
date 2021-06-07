@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Input } from 'antd';
 
 import api from '../../services/api';
-import * as BooksActions from '../../store/actions/books';
+import * as BooksActions from '../../store/actions/actions';
 
 export function InputSearch(){
   const dispatch = useDispatch();
@@ -39,6 +39,7 @@ export function InputSearch(){
     <div className="search">
       <div className="content-search">
         <Input 
+          role="input-search"
           data-testid="input-search-component"
           size="large" 
           placeholder="Pesquise aqui..." 

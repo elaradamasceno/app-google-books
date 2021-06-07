@@ -1,5 +1,4 @@
-import { render, screen, userEvent } from '../../tests/index';
-import * as actions from './books';
+import * as actions from '../../../store/actions/actions';
 
 const books = { 
   items: [
