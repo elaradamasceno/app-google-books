@@ -12,7 +12,6 @@ let savedBooks = [];
 export function BooksList(){
   const { Meta } = Card;
   const [isModalVisible, setIsModalVisible] = useState(false);
-  // const [savedBook, setSavedBook] = useState([]);
 
   const books = useSelector(state => state.books && state.books.data);
   const dispatch = useDispatch();
@@ -61,7 +60,7 @@ export function BooksList(){
   return(
     <div className="books-list">
       <div className="content-books-list">
-        {books && books.items.map((book, index) => {
+        { books && books.items ? books.items.map((book, index) => {
           return(
             <Card
               className="card-book"
@@ -84,11 +83,13 @@ export function BooksList(){
                 description={ renderDescriptionBook(book)}
               />
             </Card>
-          )
-        })}
+          )          
+        }) : (
+          <div>Nenhum livro foi encontrado, refaça sua busca!</div>
+        )}
       </div>
       { isModalVisible && <InformationModal isModalVisible={isModalVisible} setIsModalVisible={setIsModalVisible}/>}
-      { books && <Pagination showSizeChanger={false} defaultCurrent={1} total={books.totalItems} showTotal={showTotalItems} onChange={handlePagination}/> }
+      { books.totalItems > 0 && <Pagination showSizeChanger={false} defaultCurrent={1} total={books.totalItems} showTotal={showTotalItems} onChange={handlePagination}/> }
     </div>
   )
 }
