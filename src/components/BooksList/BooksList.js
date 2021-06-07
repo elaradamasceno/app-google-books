@@ -1,18 +1,25 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { useSelector, useDispatch} from 'react-redux';
 
-import { Card, Pagination } from 'antd';
+import { Card, Pagination, message  } from 'antd';
 import { FileImageOutlined, HeartOutlined, EllipsisOutlined} from '@ant-design/icons';
 import { InformationModal } from '../InformationModal/InformationModal';
 
 import * as BooksActions from '../../store/actions/books';
 
+let savedBooks = [];
+
 export function BooksList(){
   const { Meta } = Card;
   const [isModalVisible, setIsModalVisible] = useState(false);
+  // const [savedBook, setSavedBook] = useState([]);
 
   const books = useSelector(state => state.books && state.books.data);
   const dispatch = useDispatch();
+
+  const info = () => {
+    message.info('Livro salvo com sucesso!');
+  };
 
   function openInformationModal(book){
     setIsModalVisible(true);
@@ -26,6 +33,30 @@ export function BooksList(){
   function handlePagination(page){
     dispatch(BooksActions.currentPage(page));
   }
+
+  function handleSaveButton(book){
+    savedBooks.push(book);
+    savedBooks = savedBooks.filter(function(el, i) {
+      return savedBooks.indexOf(el) === i;
+    });
+
+    window.localStorage.setItem('savedBook', JSON.stringify(savedBooks));
+
+    info();
+  }
+
+  function renderDescriptionBook(book){
+    return(
+      <>
+        <p> <strong> Título: </strong> <span>{book.volumeInfo.title}</span> </p>
+        <p> <strong> Descrição: </strong> <span>{book.volumeInfo.description}</span></p>
+      </>
+    )
+  }
+
+  useEffect(() => {
+    savedBooks = window.localStorage.getItem('savedBook') ? JSON.parse(window.localStorage.getItem('savedBook')) : [];
+  }, [])
 
   return(
     <div className="books-list">
@@ -41,18 +72,16 @@ export function BooksList(){
                 book.volumeInfo.imageLinks ? <img alt="example" src={book.volumeInfo.imageLinks.thumbnail} /> : <FileImageOutlined id="not-image"/>
               }
               actions={[
-                <HeartOutlined key="favorite" />,
+                <HeartOutlined 
+                  key="favorite" 
+                  onClick={() => { handleSaveButton(book) }}
+                />,
                 <EllipsisOutlined key="ellipsis" onClick={() => { openInformationModal(book)}}/>,
               ]}
             >
               <Meta
                 title={book.volumeInfo.title}
-                description={(
-                  <>
-                    <p> <strong> Título: </strong> <span>{book.volumeInfo.title}</span> </p>
-                    <p> <strong> Descrição: </strong> <span>{book.volumeInfo.description}</span></p>
-                  </>
-                )}
+                description={ renderDescriptionBook(book)}
               />
             </Card>
           )
