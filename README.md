@@ -13,7 +13,7 @@ Aplicação responsiva garantindo a utilização em um dispositivo móvel sem co
 Redux para compartilhar as alterações de estados entre os componentes
 
 ### SASS
-Pré-processador [Sass](https://sass-lang.com/documentation) auxilando na escrita e produtividade do CSS.
+Pré-processador [Sass](https://sass-lang.com/documentation) auxilando na escrita e produtividade do CSS.\
 Para executar o sass basta: sass --watch src/styles/scss:src/styles/css
 
 ### React Testing Library
